@@ -87,12 +87,18 @@ async def start_command(client: Client, message: Message):
     else:
         reply_markup = InlineKeyboardMarkup(
             [
-                [
-                    InlineKeyboardButton("😊 About Me", callback_data = "about"),
-                    InlineKeyboardButton("🔒 Close", callback_data = "close")
+                    [
+                        InlineKeyboardButton("🍁𝙅𝙊𝙄𝙉 𝘾𝙃𝘼𝙉𝙉𝙇🍁", url="https://t.me/DK_Gru")                     
+                    ],
+                    [
+                        InlineKeyboardButton("🍁𝙅𝙊𝙄𝙉 𝙂𝙍𝙊𝙐𝙋🍁", url="https://t.me/DK_HDmovie")                     
+                    ],
+                    [
+                        InlineKeyboardButton("𝘼𝘽𝙊𝙐𝙏", callback_data = "about"),
+                        InlineKeyboardButton("𝘾𝙇𝙊𝙎𝙀", callback_data = "close")
+                    ]
                 ]
-            ]
-        )
+            )
         await message.reply_text(
             text = START_MSG.format(
                 first = message.from_user.first_name,
@@ -123,7 +129,7 @@ async def not_joined(client: Client, message: Message):
     buttons = [
         [
             InlineKeyboardButton(
-                "Join Channel",
+                "🌹1 𝙅𝙊𝙄𝙉 𝘾𝙃𝘼𝙉𝙉𝙇 🌹",
                 url = client.invitelink)
         ]
     ]
@@ -131,7 +137,7 @@ async def not_joined(client: Client, message: Message):
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text = 'Try Again',
+                    text = '🌹2 𝙋𝙍𝘼𝙎𝙎 𝙈𝙀 🌹',
                     url = f"https://t.me/{client.username}?start={message.command[1]}"
                 )
             ]
